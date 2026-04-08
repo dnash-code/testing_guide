@@ -1,0 +1,11 @@
+{
+  "guides": [
+    {
+      "path": "path/to/my/guide.md"
+    },
+    {
+      "path": "path_i_want_to_change.md",
+      "hexFilePath": "path/that/will/show/up/in/hex.md"
+    }
+  ]
+}
