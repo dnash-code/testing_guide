@@ -1,0 +1,30 @@
+# .github/workflows/hex_context_toolkit.yml
+name: Publish Hex context
+
+on:
+  push:
+    branches: [ 'main', 'master' ]
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write # Used to comment on pull_requests
+
+jobs:
+  publish_hex_context:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6
+    - name: Upload guide files
+      uses: hex-inc/action-context-toolkit@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }} # Used to comment on pull_requests
+      with:
+        config_file: hex_context.config.json
+        token: ${{ secrets.HEX_API_TOKEN }} # Create a workspace token with the Guides write scope and set this in your repository settings
+        # optional configuration
+        publish_guides: true # publish guides automatically (default true)
+        delete_untracked_guides: true # removes guides from hex that were also deleted in your repository (default true)
+        hex_url: https://app.hex.tech # For most Hex users, this will be https://app.hex.tech. For single tenant, EU multi tenant, and HIPAA multi tenant customers, replace app.hex.tech with your custom URL (e.g. atreides.hex.tech, eu.hex.tech).
+        comment_on_pr: true # To configure this, you must include a `GITHUB_TOKEN` in the env and ensure it has the pull-requests: write permission (see above)
