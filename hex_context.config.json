@@ -1,7 +1,7 @@
 {
   "guides": [
     {
-      "pattern": "testing_guide/*.md"
+      "pattern": "guides/*.md"
     }
   ]
 }
