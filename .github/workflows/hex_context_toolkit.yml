@@ -1,0 +1,26 @@
+# .github/workflows/hex_context_toolkit.yml
+name: Publish Hex context
+on:
+  push:
+    branches: [ 'main', 'master' ]
+  pull_request:
+permissions:
+  contents: read
+  pull-requests: write # Used to comment on pull_requests
+jobs:
+  publish_hex_context:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6
+    - name: Upload guide files
+      uses: hex-inc/action-context-toolkit@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }} # Used to comment on pull_requests
+      with:
+        config_file: hex_context.config.json
+        token: ${{ secrets.HEX_API_TOKEN }}           
+        publish_guides: true
+        delete_untracked_guides: true
+        hex_url: https://app.hex.tech
+        comment_on_pr: true
