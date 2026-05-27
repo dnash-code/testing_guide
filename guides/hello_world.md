@@ -3,3 +3,5 @@ name: Testing Guide File
 description: This should be ignored by the agent. It's just for testing managing guide files with Github. 
 ---
 I changed the yml to publish false
+
+Testing this again. I cant' remember. 
