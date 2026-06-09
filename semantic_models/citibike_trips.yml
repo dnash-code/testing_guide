@@ -9,7 +9,7 @@ dimensions:
     type: timestamp_naive
     expr_sql: "`STARTTIME`"
     description: |
-      The time in which the trip started (EST)
+      The time in which the trip started in eastern time. send it. 
   - id: end_station_longitude
     type: number
     expr_sql: "`END_STATION_LONGITUDE`"
