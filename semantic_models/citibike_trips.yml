@@ -29,7 +29,7 @@ dimensions:
     type: number
     expr_sql: "`START_STATION_ID`"
     description: |
-      ID of the station that the bike was picked up from
+      dude. where am I? 
   - id: end_station_latitude
     type: number
     expr_sql: "`END_STATION_LATITUDE`"
