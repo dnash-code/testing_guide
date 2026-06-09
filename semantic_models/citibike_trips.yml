@@ -14,7 +14,7 @@ dimensions:
     type: number
     expr_sql: "`END_STATION_LONGITUDE`"
     description: |
-      Longitude coordinates of the start station the bike was dropped off at
+      Longitude coordinates of the start station the bike was dropped off at. Love a bike
   - id: end_station_id
     type: number
     expr_sql: "`END_STATION_ID`"
