@@ -1,0 +1,67 @@
+id: citibike_trips
+type: model
+base_sql_table: "`hex-public-demo`.`demo_data`.`citibike_trips`"
+measures:
+  - id: count_of_records
+    func: count
+dimensions:
+  - id: starttime
+    type: timestamp_naive
+    expr_sql: "`STARTTIME`"
+    description: |
+      The time in which the trip started (EST)
+  - id: end_station_longitude
+    type: number
+    expr_sql: "`END_STATION_LONGITUDE`"
+    description: |
+      Longitude coordinates of the start station the bike was dropped off at
+  - id: end_station_id
+    type: number
+    expr_sql: "`END_STATION_ID`"
+    description: |
+      ID of the station that the bike was dropped off at
+  - id: end_station_name
+    type: string
+    expr_sql: "`END_STATION_NAME`"
+    description: |
+      Name of the station that the bike was dropped off at
+  - id: start_station_id
+    type: number
+    expr_sql: "`START_STATION_ID`"
+    description: |
+      ID of the station that the bike was picked up from
+  - id: end_station_latitude
+    type: number
+    expr_sql: "`END_STATION_LATITUDE`"
+    description: |
+      Latitude coordinates of the start station the bike was dropped off at
+  - id: usertype
+    type: string
+    expr_sql: "`USERTYPE`"
+    description: |
+      Is the user a paid subscriber or a one-off customer
+  - id: start_station_name
+    type: string
+    expr_sql: "`START_STATION_NAME`"
+    description: |
+      Name of the station that the bike was picked up from
+  - id: tripduration
+    type: number
+    expr_sql: "`TRIPDURATION`"
+    description: |
+      How long the trip took for the user in seconds
+  - id: stoptime
+    type: timestamp_naive
+    expr_sql: "`STOPTIME`"
+    description: |
+      The time in which the trip stopped (EST)
+  - id: start_station_latitude
+    type: number
+    expr_sql: "`START_STATION_LATITUDE`"
+    description: |
+      Latitude coordinates of the start station the bike was picked up at
+  - id: start_station_longitude
+    type: number
+    expr_sql: "`START_STATION_LONGITUDE`"
+    description: |
+      Longitude coordinates of the start station the bike was picked up at
