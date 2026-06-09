@@ -11,7 +11,7 @@ on:
       - 'semantic_models/**/*.yml'
 env:
   TOKEN: ${{ secrets.HEX_SEMANTIC_INGEST_TOKEN }}
-  DIRECTORY: testing_guide/semantic_models
+  DIRECTORY: semantic_models
 jobs:
   hex-semantic-project-ingest:
     runs-on: ubuntu-latest
