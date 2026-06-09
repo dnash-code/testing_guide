@@ -39,10 +39,11 @@ jobs:
             -H "Authorization: Bearer $TOKEN")
           if [ "$response" -eq 201 ]; then
             echo "✅ Successfully ingested semantic project"
-            cat response.txt | jq -r '[ .contents[] // "No content", , .problems[].display? // "No problems detected", , "Hex trace ID: " + .traceId ]|join("\n")'
+            cat response.txt | jq -r '[ (.contents[] // "No content"), (.problems[].display? // "No problems detected"), ("Hex trace ID: " + .traceId) ]|join("\n")'
           else
             echo "❌ Failed to ingest semantic project"
-            cat response.txt | jq &> /dev/null && cat response.txt | jq -r '[ .reason, , .problems[].display? // "Unknown error", , "Hex trace ID: " + .traceId ]|join("\n")' || cat response.txt
+            cat response.txt | jq &> /dev/null && cat response.txt | jq -r '[ .reason, (.problems[].display? // "Unknown error"), ("Hex trace ID: " + .traceId) ]|join("\n")'
+
             exit 1
           fi
     - name: Ingest Semantic Project (dry run)
