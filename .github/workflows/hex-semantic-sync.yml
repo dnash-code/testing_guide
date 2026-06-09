@@ -2,13 +2,13 @@ name: Hex Semantic Project Ingest
 on:
   pull_request:
     paths:
-      - 'testing_guide/semantic_models/**/*.yml'
+      - 'semantic_models/**/*.yml'
   push:
     branches:
       - main
       - master
     paths:
-      - 'testing_guide/semantic_models/**/*.yml'
+      - 'semantic_models/**/*.yml'
 env:
   TOKEN: ${{ secrets.HEX_SEMANTIC_INGEST_TOKEN }}
   DIRECTORY: testing_guide/semantic_models
